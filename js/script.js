@@ -7,32 +7,36 @@
     .then(reponse => reponse.json()) 
     .then(data => {
                 for (let i=0; i<data.records.length; i++) {
-                    let eventTitle = document.createElement('h3');
-                        const myTitle = data.records[i].fields.title
-                    eventTitle.innerText = "\n\n" + myTitle
-                    document.getElementById('Presentation').appendChild(eventTitle);
-                    let myImage = document.createElement('img');
-                        let myPic= data.records[i].fields.cover_url
-                        myImage.src = myPic
-                        myImage.width = "500"
-                        myImage.length = "500"
-                    document.getElementById('Presentation').appendChild(myImage);
-                    let eventDescription= document.createElement('p');
-                        const myAddress_street = data.records[i].fields.address_street.replaceAll(",", "")
-                        const myAddress_zipcode = data.records[i].fields.address_zipcode
-                        const myAddress_city = data.records[i].fields.address_city
-                        let myAddress = myAddress_street + ", " + myAddress_zipcode + " " +myAddress_city
-                        const myDate = data.records[i].fields.date_description.replaceAll("/[<]br[^>]*[>]/gi","")
-                        const myImportantDate = myDate.split(':')
-                        const myRealDate = myImportantDate[0]
-                    eventDescription.innerText = myRealDate + "\n" + myAddress
-                    document.getElementById('Presentation').appendChild(eventDescription);
-                    let eventLink= document.createElement('a');
-                        let myLink = data.records[i].fields.url
-                    eventLink.href = myLink
-                    eventLink.target="_blank"
-                    eventLink.innerText = "Pour plus d'informations"
-                    document.getElementById('Presentation').appendChild(eventLink);
+                    let eventDiv = document.createElement('div');
+                    eventDiv.setAttribute("id", i)
+                    document.getElementById('Presentation').appendChild(eventDiv);
+                        let eventTitle = document.createElement('h3');
+                            const myTitle = data.records[i].fields.title
+                        eventTitle.innerText = "\n\n" + myTitle
+                        document.getElementById(i).appendChild(eventTitle);
+                        let myImage = document.createElement('img');
+                            let myPic= data.records[i].fields.cover_url
+                            myImage.src = myPic
+/*                          myImage.width = "150"
+                            myImage.length = "150"
+                            myImage.height= "150" */
+                        document.getElementById(i).appendChild(myImage);
+                        let eventDescription= document.createElement('p');
+                            const myAddress_street = data.records[i].fields.address_street.replaceAll(",", "")
+                            const myAddress_zipcode = data.records[i].fields.address_zipcode
+                            const myAddress_city = data.records[i].fields.address_city
+                            let myAddress = myAddress_street + ", " + myAddress_zipcode + " " +myAddress_city
+                            const myDate = data.records[i].fields.date_description.replaceAll("/[<]br[^>]*[>]/gi","")
+                            const myImportantDate = myDate.split(':')
+                            const myRealDate = myImportantDate[0]
+                        eventDescription.innerText = myRealDate + "\n" + myAddress
+                        document.getElementById(i).appendChild(eventDescription);
+                        let eventLink= document.createElement('a');
+                            let myLink = data.records[i].fields.url
+                        eventLink.href = myLink
+                        eventLink.target="_blank"
+                        eventLink.innerText = "Pour plus d'informations"
+                        document.getElementById(i).appendChild(eventLink);
                 }
             })
 
