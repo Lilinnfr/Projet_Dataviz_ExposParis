@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    min-width: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 150p;
+    grid-template-areas: 
+    "a a a"
+    "b c c"
+    "d d e"
+    "f f f";
+}
+.bloc:nth-child(1){
+    background: darkorchid;
+    grid-area: a;
+}
+.bloc:nth-child(2){
+    background: green;
+    grid-area: b;
+}
+.bloc:nth-child(3){
+    background: crimson;
+    grid-area: c;
+}
+.bloc:nth-child(4){
+    background: gray;
+    grid-area: d;
+}
+.bloc:nth-child(5){
+    background: goldenrod;
+    grid-area: e;
+}
+.bloc:nth-child(6){
+    background: black;
+    grid-area: f;
+}
