@@ -1,35 +1,39 @@
 body{
-    margin: 0;
-    min-width: 100vh;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 150p;
-    grid-template-areas: 
-    "a a a"
-    "b c c"
-    "d d e"
-    "f f f";
+    background: url("/assets/champselysees_1920.jpg") fixed ;
 }
-.bloc:nth-child(1){
-    background: darkorchid;
-    grid-area: a;
+
+main{
+    background-color: blanchedalmond;
+    text-align: center;
+    align-self: center;
+    width: 60%;
+    border-radius: 20px;
+    display: block;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
-.bloc:nth-child(2){
-    background: green;
-    grid-area: b;
+
+h1{
+    background-color: blanchedalmond;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 4rem;
+    color: black;
+    text-align: center;
+    font-family: 'Times New Roman';
+    border-radius: 20px;
 }
-.bloc:nth-child(3){
-    background: crimson;
-    grid-area: c;
+
+.expoblabla{
+    font-family: 'Times New Roman', Times, serif;
 }
-.bloc:nth-child(4){
-    background: gray;
-    grid-area: d;
-}
-.bloc:nth-child(5){
-    background: goldenrod;
-    grid-area: e;
-}
-.bloc:nth-child(6){
-    background: black;
-    grid-area: f;
-}
+
