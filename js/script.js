@@ -9,12 +9,14 @@
                 for (let i=0; i<data.records.length; i++) {
                     let eventDiv = document.createElement('div');
                     eventDiv.setAttribute("id", i)
+                    eventDiv.setAttribute("class", "expoBox")
                     document.getElementById('Presentation').appendChild(eventDiv);
                         let eventTitle = document.createElement('h3');
                             const myTitle = data.records[i].fields.title
                         eventTitle.innerText = "\n\n" + myTitle
                         document.getElementById(i).appendChild(eventTitle);
                         let myImage = document.createElement('img');
+                        myImage.setAttribute("class", "expoImg")
                             let myPic= data.records[i].fields.cover_url
                             myImage.src = myPic
 /*                          myImage.width = "150"
@@ -39,4 +41,3 @@
                         document.getElementById(i).appendChild(eventLink);
                 }
             })
-
